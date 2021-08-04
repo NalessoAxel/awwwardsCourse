@@ -1,15 +1,73 @@
-const express = require('express')
-const app = express()
-const path = require('path')
-const port = 3000
+require("dotenv").config();
 
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'pug')
+const express = require("express");
+const app = express();
+const path = require("path");
+const port = 3000;
 
-app.get('/', (req, res) => {
-  res.render('index')
-})
+const Prismic = require("@prismicio/client");
+const PrismicDOM = require("prismic-dom");
+
+const initApi = (req) => {
+  return Prismic.getApi(process.env.PRISMIC_ENDPOINT, {
+    accessToken: process.env.PRISMIC_ACCES_TOKEN,
+    req,
+  });
+};
+
+const handleLinkResolver = (doc) => {
+  // Define the url depending on the document type
+  // if (doc.type === "page") {
+  //   return "/page/" + doc.uid;
+  // } else if (doc.type === "blog_post") {
+  //   return "/blog/" + doc.uid;
+  // }
+
+  // Default to homepage
+  return "/";
+};
+
+app.use((req, res, next) => {
+  res.locals.ctx = {
+    endpoint: process.env.PRISMIC_ENDPOINT,
+    linkResolver: handleLinkResolver,
+  };
+  // add PrismicDOM in locals to access them in templates.
+  res.locals.PrismicDOM = PrismicDOM;
+  next();
+});
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
+app.get("/", async (req, res) => {
+  res.render("pages/home");
+});
+
+app.get("/about", (req, res) => {
+  initApi(req).then((api) => {
+    api
+      .query(Prismic.Predicates.any("document.type", ["meta", "about"]))
+      .then((response) => {
+        const { results } = response;
+        const [about, meta] = results;
+        console.log(about, meta);
+        res.render("pages/about", {
+          meta,
+          about,
+        });
+      });
+  });
+});
+
+app.get("/collection", async (req, res) => {
+  res.render("pages/collection");
+});
+
+app.get("/details/:uid", async (req, res) => {
+  res.render("pages/details");
+});
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+  console.log(`Example app listening at http://localhost:${port}`);
+});
