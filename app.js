@@ -96,7 +96,7 @@ app.get("/", async (req, res) => {
   const defaults = await handleRequest(api);
   const home = await api.getSingle("home");
 
-  console.log("home:", home.data.collections);
+  // console.log("home:", home.data.collections);
 
   const { results: collections } = await api.query(
     //deconstruct
@@ -106,7 +106,7 @@ app.get("/", async (req, res) => {
     }
   );
 
-  console.log("collec:", collections);
+  // console.log("collec:", collections);
 
   res.render("pages/home", {
     ...defaults,

@@ -1,3 +1,13 @@
+@import './utils/variables';
+@import './utils/function';
+@import './utils/mixins';
+@import './utils/vendors';
+
+@import './base/fonts';
+@import './base/reset';
+@import './base/base';
+
+
 @import './pages/about/about';
 @import './pages/about/content';
 @import './pages/about/gallery';
