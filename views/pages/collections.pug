@@ -8,15 +8,15 @@ block content
     .collections 
         .collections_wrapper
             .collections_titles
-                each collection, index in collections 
-                    .collection_titles_label=`${home.data.collection} ${Numbers(index)}`
-                        .collections_titles_title=collection.data.title
+                each collection, index in collections
+                    .collections_titles_label= `${home.data.collection} ${Numbers(index)}`
+                    .collections_tiltes_title= collection.data.title
 
             .collections_gallery 
                 .collections_wrapper_gallery 
                     each collection in collections
                         each product in collection.data.products
-                            a.collections_gallery_link(href=Link(product.products_product))
+                            a.collections_gallery_link(href=Link(product.product_product))
                                 figure.collections_gallery_media 
                                     img.collection_gallery_media_image(alt=product.product_product.data.image.alt src=product.product_product.data.image.url)
                 
