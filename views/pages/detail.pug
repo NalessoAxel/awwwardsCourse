@@ -8,7 +8,7 @@ block content
         .detail 
             .detail_wrapper 
                 figure.detail_media 
-                image.detail_media_image(alt=product.data.image src=(product.data.image.url))
+                    image.detail_media_image(alt=product.data.image src=(product.data.image.url))
 
             .detail_informations 
                 p.detail_informations_description=product.data.collection.data.title
@@ -20,7 +20,7 @@ block content
                         each highlight in product.data.highlights
                             p.detail_information_highlight
                                 svg.detail_information_highlight_icon
-                                use(xlink:href=`sprite-${highlight.highlights_icon.toLowerCase()}`)
+                                    use(xlink:href=`sprite-${highlight.highlights_icon.toLowerCase()}`)
 
                                 | #{highlight.highlights_text}
 

@@ -1,12 +1,18 @@
+@import './base/reset';
+
 @import './utils/variables';
 @import './utils/function';
 @import './utils/mixins';
 @import './utils/vendors';
+@import './utils/responsive';
+
+@import './shared/description';
+@import './shared/titles';
 
 @import './base/fonts';
-@import './base/reset';
 @import './base/base';
 
+@import './components/preloader';
 
 @import './pages/about/about';
 @import './pages/about/content';
@@ -18,4 +24,3 @@
 @import './pages/details/details';
 
 @import './pages/home/home';
-
