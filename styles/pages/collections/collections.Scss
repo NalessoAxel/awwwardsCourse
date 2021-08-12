@@ -1,42 +1,67 @@
 .collections{
-    
+    @extend %cover;
+
+    background: $color-quicksand;
 } 
+
 .collections_wrapper{
-    
+    @extend %cover;
 }
+
 .collections_titles{
-    
+    align-items: center;
+    display: flex;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    top: 50%;
 }
+
 .collections_titles_label{
-    
+    @extend %description-12;
+    text-transform: uppercase;
+    text-align: center;
+    transform: rotate(90deg);
+    color: $color-quarter-spanish-white;
 }
+
 .collections_tiltes_title{
-    
+    @extend %title-200;
+
 }
+
 .collections_gallery {
     
 }
+
 .collections_wrapper_gallery {
     
 }
+
 .collections_gallery_link{
     
 }
+
 .collections_gallery_media {
     
 }
+
 .collections_gallery_media_image{
     
 }
+
 .collections_content {
     
 }
+
 .collections_article{
     
 }
+
 .collections_article_title{
     
 }
+
 .collections_article_description{
     
 }

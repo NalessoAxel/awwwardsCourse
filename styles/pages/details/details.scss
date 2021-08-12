@@ -1,6 +1,8 @@
 .detail {
     @extend %cover;
     @extend %center;
+    background-color: $color-quicksand;
+    color: $wh$color-quarter-spanish-white;
 }
 
 .detail_wrapper {
@@ -20,36 +22,52 @@
 }
 
 .detail_informations {
-    
+    padding-left: 8.2rem;
 }
 
 .detail_informations_description{
     @extend %description-12;
+
+    text-transform: uppercase;
+    margin-bottom: 1.7rem;
 }
 
 .detail_informations_title{ 
     @extend %title-120;
+    max-width: 60rem;
+    line-height: 0.95;
 }
 
 .detail_informations_content {
-    padding-left: 18rem;
+    padding-left: 17rem;
 }
 
 .detail_informations_highlights{
+    
+
     margin-top: 5rem;
 }
 
 .detail_information_highlight{
     align-items: center;
     display: flex;
+    &:first-child {
+        margin-bottom: 3.75rem;
+    }
 }
 
 .detail_information_highlight_icon{
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    margin-right: 3.8rem;
 
+    
 }
 
 .detail_information_highlights_text{
-
+    @extend %description-16;
 }
 
 .detail_informations_list {
@@ -57,7 +75,7 @@
 }
 
 .detail_information_item{
-    align-items: center;
+    
     display: flex;
 
     &:not(:first-child) {
@@ -66,14 +84,21 @@
 }
 
 .detail_information_item_title{
-    @extend %descripion-12;
+    @extend %description-12;
+
+    width: 10rem;
 }
 
 .detail_information_item_description{
+    @extend %description-16; 
 
+    max-width: 44rem;
 }
 
 .detail_inforamtion_link {
     @extend %title-30;
+    
+    display: inline-block;
+
     margin-top: 3rem;
 }

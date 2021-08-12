@@ -9,7 +9,7 @@ block content
         .collections_wrapper
             .collections_titles
                 each collection, index in collections
-                    .collections_titles_label= `${home.data.collection} ${Numbers(index)}`
+                    .collections_titles_label!= `${home.data.collection}<br> ${Numbers(index)}`
                     .collections_tiltes_title= collection.data.title
 
             .collections_gallery 
