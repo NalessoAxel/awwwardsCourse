@@ -140,7 +140,7 @@ app.get("/collections", async (req, res) => {
   );
 
   collections.forEach((collection) => {
-    console.log("results:", collection);
+    // console.log("results:", collection);
   });
 
   res.render("pages/collections", {

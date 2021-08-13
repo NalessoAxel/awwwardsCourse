@@ -12,6 +12,7 @@ block content
                     each media in about.data.gallery 
                         figure.about_gallery_media 
                             img.about_gallery_media_image(alt=media.image.alt src=media.image.url)
+
         each section in about.data.body 
             if section.slice_type == 'title'
                 h2.about_title=section.primary.text
@@ -23,7 +24,7 @@ block content
                     .about_content_description!=PrismicDOM.RichText.asHtml(section.primary.description)
 
                     figure.about_content_media 
-                    img.about_content_media_image(alt=section.primary.image.alt src=section.primary.image.url)
+                        img.about_content_media_image(alt=section.primary.image.alt src=section.primary.image.url)
             
             if section.slice_type == 'highlight'
                 section.about_highlight
@@ -34,11 +35,11 @@ block content
 
                         each media in section.items 
                             figure.about_highlight_media 
-                            img.about_highlight_media_image(alt=media.image.alt src=media.image.url)
+                                img.about_highlight_media_image(alt=media.image.alt src=media.image.url)
 
             if section.slice_type== 'gallery'
                 section.about_gallery
-                .about_gallery_wrapper 
-                    each media in section.items 
-                        figure.about_gallery_media 
-                        img.about_gallery_media_image(alt=media.image.alt src=media.image.url)
+                    .about_gallery_wrapper 
+                        each media in section.items 
+                            figure.about_gallery_media 
+                                img.about_gallery_media_image(alt=media.image.alt src=media.image.url)

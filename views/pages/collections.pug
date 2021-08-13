@@ -21,7 +21,7 @@ block content
                                     img.collection_gallery_media_image(alt=product.product_product.data.image.alt src=product.product_product.data.image.url)
                 
                 .collections_content 
-                    each collection in collections 
-                        article.collections_article
+                    each collection, index in collections 
+                        article.collections_article(class=`${index === 0 ? 'collections_article--active' : ''}`)
                             h2.collections_article_title=`${collection.data.title} ${home.data.collection}`
                             p.collections_article_description=collection.data.description

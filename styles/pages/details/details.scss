@@ -2,7 +2,7 @@
     @extend %cover;
     @extend %center;
     background-color: $color-quicksand;
-    color: $wh$color-quarter-spanish-white;
+    color: $color-quarter-spanish-white;
 }
 
 .detail_wrapper {
@@ -68,6 +68,8 @@
 
 .detail_information_highlights_text{
     @extend %description-16;
+
+    letter-spacing: 0.03rem;
 }
 
 .detail_informations_list {
