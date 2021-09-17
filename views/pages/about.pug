@@ -15,7 +15,7 @@ block content
 
         each section in about.data.body 
             if section.slice_type == 'title'
-                h2.about_title=section.primary.text
+                h2.about_title!=section.primary.text.replace(/\n/g, '<br>')
             
             if section.slice_type == 'content'
                 section.about_content 
@@ -33,9 +33,10 @@ block content
                             p.about_highlight_label=section.primary.label
                         h3.about_highlight_title=section.primary.title
 
-                        each media in section.items 
-                            figure.about_highlight_media 
-                                img.about_highlight_media_image(alt=media.image.alt src=media.image.url)
+                        .about_highlight_medias
+                            each media in section.items 
+                                figure.about_highlight_media 
+                                    img.about_highlight_media_image(alt=media.image.alt src=media.image.url)
 
             if section.slice_type== 'gallery'
                 section.about_gallery

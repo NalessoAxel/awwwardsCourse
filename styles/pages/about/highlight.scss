@@ -12,18 +12,56 @@
 }
 
 .about_highlight_wrapper {
-
+    position: relative;
+    margin: auto;
+    height: 104rem;
+    width: 144rem;
 }
 
 .about_highlight_label{
-
+    @extend %description-12;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 9rem;
+    transform: translateX(-50%);
+    width: 9.6rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
 }
+
 .about_highlight_title{
-
+    @extend %title-200;
+    padding-bottom: 2rem;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    top: 50%;
+    left: 50%;
 }
+
 .about_highlight_media {
+    position: absolute;
+    height: 76rem;
+    width: 54rem;
+    overflow: hidden;
 
+    .about_highlight:nth-child(2) {
+        height: 52.8rem;
+        width: 36rem;
+    }
+    &:first-child {
+        top: 0;
+        left: 0;   
+    }
+
+    &:last-child {
+        bottom: 0;
+        right: 0;
+    }
 }
-.about_highlight_media_image{
 
+.about_highlight_media_image{
+    @extend%cover;
+
+    object-fit: cover;
 }

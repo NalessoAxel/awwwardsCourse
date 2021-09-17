@@ -1,6 +1,7 @@
 .about_content {
     position: relative;
-    margin: 20rem 0;
+    margin: 20rem auto;
+    width: 125.8rem;
 
     &:first-child {
         margin-top: 0;
@@ -10,18 +11,25 @@
         margin-bottom: 0;
     }
 }
+
 .about_content_wrapper {
-
+    display: flex;
+    
 }
+
 .about_content_label{
-
+    width: 18rem;
 }
+
 .about_content_description{
-
+    width: 36.2rem;
 }
-.about_content_media{
 
+.about_content_media{
+    position: absolute;
+    display: none;
 } 
+
 .about_content_media_image{
 
 }
